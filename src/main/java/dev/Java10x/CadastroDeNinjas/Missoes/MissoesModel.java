@@ -18,8 +18,11 @@ public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     String nome_missao;
+
     String rank;
+
     //UMA MISSAO PODE TER VARIOS NINJAS
     @OneToMany(mappedBy = "missoes")
     List<MissoesModel> missoes;
