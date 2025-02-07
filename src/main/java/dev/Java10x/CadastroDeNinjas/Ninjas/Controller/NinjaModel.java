@@ -1,6 +1,9 @@
-package dev.Java10x.CadastroDeNinjas;
+package dev.Java10x.CadastroDeNinjas.Ninjas.Controller;
 
+import dev.Java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_Cadastro")
@@ -8,10 +11,11 @@ public class NinjaModel {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        Long id;
-        String nome;
-        String email;
-        int idade;
+        private Long id;
+        private String nome;
+        private String email;
+        private int idade;
+        private List<MissoesModel> missoes;
 
     public NinjaModel(){}
 
@@ -43,5 +47,16 @@ public class NinjaModel {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+        return "NinjaModel{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", idade=" + idade +
+                ", missoes=" + missoes +
+                '}';
     }
 }
