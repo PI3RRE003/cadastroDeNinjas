@@ -1,5 +1,6 @@
 package dev.Java10x.CadastroDeNinjas.Missoes;
 
+import dev.Java10x.CadastroDeNinjas.Ninjas.Controller.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,7 @@ public class MissoesModel {
 
     //UMA MISSAO PODE TER VARIOS NINJAS
     @OneToMany(mappedBy = "missoes")
-    List<MissoesModel> missoes;
+    private List<NinjaModel> ninjas;
 
 
 }
